@@ -1,0 +1,16 @@
+# Files to not ignore
+!***.c
+!include/*.h
+
+
+# Files related to the project and ignored
+***a.out
+***.o
+
+# Dev setup files 
+***.vscode
+***compile_commands.json
+***.cache
+
+# Valgrind files
+***vgcore.*
