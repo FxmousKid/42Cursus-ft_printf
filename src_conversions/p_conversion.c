@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 23:45:40 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/01 23:38:08 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/02 21:54:57 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	make_hexa_ptr(char *tab, void *ptr)
 	tab[0] = '0';
 	tab[1] = 'x';
 	tmp = lower_x_conversion((long) nb);
-	printf("tmp: %s\n", tmp);
 	ft_memcpy(tab + 2, tmp, ft_strlen(tmp));
 	tab[ft_strlen(tmp) + 2] = 0;
 	free(tmp);
