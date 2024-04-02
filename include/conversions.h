@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 17:41:52 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/01 22:40:26 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/02 22:04:41 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,10 @@ char	*upper_x_conversion(long num);
 char	*lower_x_conversion(long num);
 char	*p_conversion(void *ptr);
 char	*d_and_i_conversions(int num);
+char	*s_conversion(char *str);
+char	*c_conversion(char c);
+char	*percent_conversion();
+char	*u_conversion(unsigned int num);
+
 
 #endif
