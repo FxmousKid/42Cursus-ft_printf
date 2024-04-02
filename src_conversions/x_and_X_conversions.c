@@ -6,11 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 17:59:49 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/01 22:42:46 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/02 01:18:37 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/conversions.h"
+#include "conversions.h"
 
 static int	calc_size_malloc(long num)
 {
