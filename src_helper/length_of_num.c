@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   c_conversion.c                                     :+:      :+:    :+:   */
+/*   length_of_num.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 22:19:52 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/03 22:43:22 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/03 23:01:48 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/04 00:36:30 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/conversions.h"
 
-t_args	c_conversion(t_args s_args)
+int	length_of_num(long num, char *base)
 {
-	char	c;
+	int	len;
+	int	base_len;
 
-	c = va_arg(s_args.args, int);
-	ft_putchar(c);
-	s_args.rendue++;
-	return (s_args);
+	base_len = ft_strlen(base);
+	len = 0;
+	if (num == 0)
+		return (1);
+	if (num < 0)
+		num = -num;
+	while (num > 0)
+	{
+		num = num / base_len;
+		len++;
+	}
+	return (len);
 }

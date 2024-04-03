@@ -6,17 +6,18 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 21:50:27 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/03 16:06:44 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/04 00:39:18 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/conversions.h"
 
-va_list	d_and_i_conversions(va_list args)
+t_args	d_and_i_conversions(t_args s_args)
 {
 	int		num;
 
-	num = va_arg(args, int);
+	num = va_arg(s_args.args, int);
 	ft_putnbr(num);
-	return (args);
+	s_args.rendue += length_of_num(num, "0123456789");
+	return (s_args);
 }

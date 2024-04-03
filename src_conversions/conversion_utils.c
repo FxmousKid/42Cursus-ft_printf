@@ -6,17 +6,17 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 23:17:54 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/03 16:41:57 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/04 00:42:32 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/conversions.h"
 
-conversionFuncPtr	*make_conversion_table()
+t_conversionFuncPtr	*make_conversion_table(void)
 {
-	conversionFuncPtr *conversion_table;
+	t_conversionFuncPtr	*conversion_table;
 
-	conversion_table = ft_calloc(sizeof(conversionFuncPtr) * 127);
+	conversion_table = ft_calloc(sizeof(t_conversionFuncPtr) * 127);
 	if (conversion_table == NULL)
 		return (NULL);
 	conversion_table['c'] = c_conversion;
@@ -26,7 +26,7 @@ conversionFuncPtr	*make_conversion_table()
 	conversion_table['i'] = d_and_i_conversions;
 	conversion_table['u'] = u_conversion;
 	conversion_table['x'] = lower_x_conversion;
-	conversion_table['X'] = upper_x_conversion;	
+	conversion_table['X'] = upper_x_conversion;
 	conversion_table['%'] = percent_conversion;
 	return (conversion_table);
 }
