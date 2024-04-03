@@ -6,16 +6,15 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 21:56:13 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/02 22:00:38 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/03 16:52:30 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/conversions.h"
+#include <stdio.h>
 
-char	*percent_conversion()
+va_list	percent_conversion(va_list args)
 {
-	char *result;
-
-	result = ft_strdup("%");
-	return (result);
+	ft_putchar('%');
+	return (args);
 }
