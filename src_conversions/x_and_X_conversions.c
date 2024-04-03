@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 17:59:49 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/02 01:18:37 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/03 16:45:14 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,28 +47,36 @@ static	void	add_int_to_string(char *dest, long num, int len, char *base)
 	tmp[0] = base[num];
 }
 
-char	*lower_x_conversion(long num)
+va_list	lower_x_conversion(va_list args)
 {
 	int		size_malloc;
 	char	*str;
+	int		num;
 
+	num = va_arg(args, int);
 	size_malloc = calc_size_malloc(num);
 	str = (char *) ft_calloc(sizeof(char) * (size_malloc + 1));
 	if (str == NULL)
-		return (NULL);
+		return (args);
 	add_int_to_string(str, num, size_malloc, "0123456789abcdef");
-	return (str);
+	ft_putstr(str);
+	free(str);
+	return (args);
 }
 
-char	*upper_x_conversion(long num)
+va_list	upper_x_conversion(va_list args)
 {
 	int		size_malloc;
 	char	*str;
+	int		num;
 
+	num = va_arg(args, int);
 	size_malloc = calc_size_malloc(num);
 	str = (char *) ft_calloc(sizeof(char) * (size_malloc + 1));
 	if (str == NULL)
-		return (NULL);
+		return (args);
 	add_int_to_string(str, num, size_malloc, "0123456789ABCDEF");
-	return (str);
+	ft_putstr(str);
+	free(str);
+	return (args);
 }
