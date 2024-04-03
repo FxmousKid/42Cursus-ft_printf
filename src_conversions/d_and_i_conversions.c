@@ -6,16 +6,17 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 21:50:27 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/02 22:02:25 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/03 16:06:44 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/conversions.h"
 
-char	*d_and_i_conversions(int num)
+va_list	d_and_i_conversions(va_list args)
 {
-	char	*tab;
+	int		num;
 
-	tab = ft_itoa(num);
-	return (tab);
+	num = va_arg(args, int);
+	ft_putnbr(num);
+	return (args);
 }

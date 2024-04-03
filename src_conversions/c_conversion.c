@@ -6,20 +6,18 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 22:19:52 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/02 22:08:27 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/03 20:11:12 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/conversions.h"
 
-char	*c_conversion(char c)
+va_list	c_conversion(va_list args)
 {
 	char	*result;
+	char	c;
 
-	result = (char *) malloc(sizeof(char) * 2);
-	if (result == NULL)
-		return (NULL);
-	result[0] = c;
-	result[1] = '\0';
-	return (result);
+	c = va_arg(args, int);
+	ft_putchar(c);
+	return (args);
 }
