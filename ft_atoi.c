@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   percent_conversion.c                               :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/02 21:56:13 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/03 23:14:56 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/01 22:31:43 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/01 22:31:46 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/conversions.h"
+#include "ft_printf.h"
 
-t_args	percent_conversion(t_args s_args)
+int	ft_atoi(char *nptr)
 {
-	ft_putchar('%');
-	s_args.rendue += 1;
-	return (s_args);
+	int	rendue;
+	int	sign;
+
+	rendue = 0;
+	sign = 1;
+	while (*nptr >= '\t' && *nptr <= '\r')
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
+	{
+		if (*nptr == '-')
+			sign = -sign;
+		nptr++;
+	}
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		rendue = (*nptr - '0') + 10 * rendue;
+		nptr++;
+	}
+	return (rendue * sign);
 }

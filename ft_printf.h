@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conversions.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 17:41:52 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/04 00:43:20 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/04 01:50:56 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERSIONS_H
-# define CONVERSIONS_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -59,6 +59,7 @@ t_args				s_conversion(t_args s_args);
 t_conversionFuncPtr	*make_conversion_table(void);
 
 // Main function
-int					ft_printf(const char *str, ...);
+int					ft_printf(const char *str, ...)
+					__attribute__ ((format (printf, 1, 2)));
 
 #endif

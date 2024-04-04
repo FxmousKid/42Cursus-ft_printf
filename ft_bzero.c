@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 19:19:57 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/01 22:31:58 by inazaria         ###   ########.fr       */
+/*   Created: 2024/03/20 02:05:31 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/01 22:37:13 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/conversions.h"
+#include "ft_printf.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t	counter;
 
+	if (s == NULL)
+		return ;
 	counter = 0;
-	while (s && s[counter])
-		counter++;
-	return (counter);
+	while (counter < n)
+		((char *)s)[counter++] = 0;
+	return ;
 }

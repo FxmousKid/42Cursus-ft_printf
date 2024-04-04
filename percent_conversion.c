@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   percent_conversion.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 02:05:31 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/01 22:37:13 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/02 21:56:13 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/03 23:14:56 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/conversions.h"
+#include "ft_printf.h"
 
-void	ft_bzero(void *s, size_t n)
+t_args	percent_conversion(t_args s_args)
 {
-	size_t	counter;
-
-	if (s == NULL)
-		return ;
-	counter = 0;
-	while (counter < n)
-		((char *)s)[counter++] = 0;
-	return ;
+	ft_putchar('%');
+	s_args.rendue += 1;
+	return (s_args);
 }

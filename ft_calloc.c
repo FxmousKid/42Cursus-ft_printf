@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   length_of_num.c                                    :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/03 23:01:48 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/04 00:36:30 by inazaria         ###   ########.fr       */
+/*   Created: 2024/03/20 02:05:07 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/01 22:41:53 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/conversions.h"
+#include "ft_printf.h"
 
-int	length_of_num(long num, char *base)
+void	*ft_calloc(size_t total)
 {
-	int	len;
-	int	base_len;
+	void	*tab;
 
-	base_len = ft_strlen(base);
-	len = 0;
-	if (num == 0)
-		return (1);
-	if (num < 0)
-		num = -num;
-	while (num > 0)
-	{
-		num = num / base_len;
-		len++;
-	}
-	return (len);
+	if (total > ULONG_MAX)
+		return (NULL);
+	tab = malloc(total);
+	if (tab == NULL)
+		return (NULL);
+	ft_bzero(tab, total);
+	return (tab);
 }

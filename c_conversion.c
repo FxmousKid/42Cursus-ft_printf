@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   c_conversion.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 02:00:38 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/01 22:43:28 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/01 22:19:52 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/04 00:57:57 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/conversions.h"
+#include "ft_printf.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+t_args	c_conversion(t_args s_args)
 {
-	size_t	counter;
-	char	*dest_ptr;
-	char	*src_ptr;
+	char	c;
 
-	if (dest == NULL || src == NULL)
-		return (NULL);
-	dest_ptr = (char *) dest;
-	src_ptr = (char *) src;
-	counter = -1;
-	while (++counter < n)
-		dest_ptr[counter] = src_ptr[counter];
-	dest_ptr[counter] = '\0';
-	return (dest);
+	c = va_arg(s_args.args, int);
+	ft_putchar(c);
+	s_args.rendue++;
+	return (s_args);
 }

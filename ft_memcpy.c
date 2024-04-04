@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/02 22:30:08 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/03 23:01:29 by inazaria         ###   ########.fr       */
+/*   Created: 2024/03/20 02:00:38 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/01 22:43:28 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/conversions.h"
+#include "ft_printf.h"
 
-void	ft_putchar(char c)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	write(1, &c, 1);
+	size_t	counter;
+	char	*dest_ptr;
+	char	*src_ptr;
+
+	if (dest == NULL || src == NULL)
+		return (NULL);
+	dest_ptr = (char *) dest;
+	src_ptr = (char *) src;
+	counter = -1;
+	while (++counter < n)
+		dest_ptr[counter] = src_ptr[counter];
+	dest_ptr[counter] = '\0';
+	return (dest);
 }

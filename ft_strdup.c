@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 02:05:07 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/01 22:41:53 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/01 22:15:15 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/01 22:43:43 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/conversions.h"
+#include "ft_printf.h"
 
-void	*ft_calloc(size_t total)
+char	*ft_strdup(const char *s1)
 {
-	void	*tab;
+	char	*str;
+	size_t	len;
 
-	if (total > ULONG_MAX)
+	len = ft_strlen(s1);
+	str = (char *) ft_calloc(sizeof(char) * (len + 1));
+	if (str == NULL)
 		return (NULL);
-	tab = malloc(total);
-	if (tab == NULL)
-		return (NULL);
-	ft_bzero(tab, total);
-	return (tab);
+	ft_memcpy(str, s1, len);
+	str[len] = '\0';
+	return (str);
 }

@@ -6,19 +6,16 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 23:17:54 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/04 00:42:32 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/04 01:55:33 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/conversions.h"
+#include "ft_printf.h"
 
 t_conversionFuncPtr	*make_conversion_table(void)
 {
-	t_conversionFuncPtr	*conversion_table;
+	static t_conversionFuncPtr	conversion_table[127] = {0};
 
-	conversion_table = ft_calloc(sizeof(t_conversionFuncPtr) * 127);
-	if (conversion_table == NULL)
-		return (NULL);
 	conversion_table['c'] = c_conversion;
 	conversion_table['s'] = s_conversion;
 	conversion_table['p'] = p_conversion;

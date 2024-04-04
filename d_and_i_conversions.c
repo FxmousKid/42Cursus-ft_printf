@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   d_and_i_conversions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 22:15:15 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/01 22:43:43 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/01 21:50:27 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/04 02:12:44 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/conversions.h"
+#include "ft_printf.h"
 
-char	*ft_strdup(const char *s1)
+t_args	d_and_i_conversions(t_args s_args)
 {
-	char	*str;
-	size_t	len;
+	int		num;
 
-	len = ft_strlen(s1);
-	str = (char *) ft_calloc(sizeof(char) * (len + 1));
-	if (str == NULL)
-		return (NULL);
-	ft_memcpy(str, s1, len);
-	str[len] = '\0';
-	return (str);
+	num = va_arg(s_args.args, int);
+	ft_putnbr(num);
+	s_args.rendue += length_of_num(num, "0123456789");
+	return (s_args);
 }

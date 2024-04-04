@@ -6,13 +6,13 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 17:59:49 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/04 00:39:41 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/04 01:12:27 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/conversions.h"
+#include "ft_printf.h"
 
-static	void	ft_putnbr_base(long num, char *base)
+static	void	ft_putnbr_base(long long num, char *base)
 {
 	if (num < 0)
 	{

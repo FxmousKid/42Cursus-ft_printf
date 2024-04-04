@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 20:49:10 by inazaria          #+#    #+#              #
-#    Updated: 2024/04/04 00:34:23 by inazaria         ###   ########.fr        #
+#    Updated: 2024/04/04 01:03:59 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,13 +33,7 @@ C_FILES_HELPER += length_of_num.c
 
 C_FILES_PARSER += parsing_utils.c
 
-SRC_FILES_PARSER      = $(addprefix ./src_parser/, $(C_FILES_PARSER))
-SRC_FILES_CONVERSIONS = $(addprefix ./src_conversions/, $(C_FILES_CONVERSIONS))
-SRC_FILES_HELPER      = $(addprefix ./src_helper/, $(C_FILES_HELPER))
-
-HEADER_PATH  = ./include/
-
-SRC_FILES    += $(SRC_FILES_CONVERSIONS) $(SRC_FILES_PARSER) $(SRC_FILES_HELPER)
+SRC_FILES    += $(C_FILES_PARSER) $(C_FILES_CONVERSIONS) $(C_FILES_HELPER) ft_printf.c
 OBJ_FILES    = $(SRC_FILES:.c=.o)
 
 C_FLAGS      = -Wall -Wextra -Werror -g3
@@ -47,25 +41,21 @@ NAME         = libftprintf.a
 CC 			 = cc
 RM			 = rm -rf
 
-#.c.o:
-#				$(CC) $(CFLAGS) -I $(HEADER_PATH) -c $< -o $(<:.c=.o)
+.c.o:
+	$(CC) $(C_FLAGS) -I . -c $< -o $(<:.c=.o)
 
-test : $(OBJ_FILES)
-	$(CC) $(CFLAGS) -I $(HEADER_PATH) -c main.c -o main.o
-	$(CC) $(CFLAGS) $(OBJ_FILES) main.o -I $(HEADER_PATH) -o test
-
-all : $(OUTPUT)
+all : $(NAME)
 
 clean :
-	$(RM) $(OBJ_FILES) main.o vgcore*
+	$(RM) $(OBJ_FILES)
 
-fclean : clean
-	$(RM) $(OUTPUT) $(OBJ_FILES) test
+fclean :
+	$(RM) $(NAME) $(OBJ_FILES)
 
 re : fclean all
 
-$(OUTPUT) : $(OBJ_FILES)
-	ar rcs $(OUTPUT) $(OBJ_FILES)
+$(NAME) : $(OBJ_FILES)
+	ar rcs $(NAME) $(OBJ_FILES)
 
 .PHONY: all clean fclean re test
 
