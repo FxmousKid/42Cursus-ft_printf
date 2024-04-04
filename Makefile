@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 20:49:10 by inazaria          #+#    #+#              #
-#    Updated: 2024/04/04 01:03:59 by inazaria         ###   ########.fr        #
+#    Updated: 2024/04/04 13:20:45 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,5 +57,4 @@ re : fclean all
 $(NAME) : $(OBJ_FILES)
 	ar rcs $(NAME) $(OBJ_FILES)
 
-.PHONY: all clean fclean re test
-
+.PHONY: all clean fclean re
