@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 17:41:52 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/04 01:50:56 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/04 12:46:01 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void				ft_bzero(void *s, size_t n);
 void				ft_putchar(char c);
 void				ft_putnbr(long n);
 int					length_of_num(long num, char *base);
+int					length_of__ulong_num(unsigned long long num, char *base);
 
 // Parsing functions
 int					parse_arg_count(char *str);

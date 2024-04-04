@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 00:48:20 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/04 01:55:59 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/04 12:51:13 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ int	ft_printf(const char *str, ...)
 
 	va_start(args, str);
 	conv_table = make_conversion_table();
-	if (conv_table == NULL)
-		return (-1);
 	rendue = ft_printf_aux((char *) str, conv_table, args);
 	va_end(args);
 	return (rendue);
