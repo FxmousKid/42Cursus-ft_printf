@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   d_and_i_conversions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 02:05:07 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/01 22:41:53 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/01 21:50:27 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/04 12:22:32 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../include/ft_printf.h"
 
-void	*ft_calloc(size_t total)
+t_args	d_and_i_conversions(t_args s_args)
 {
-	void	*tab;
+	int		num;
 
-	if (total > ULONG_MAX)
-		return (NULL);
-	tab = malloc(total);
-	if (tab == NULL)
-		return (NULL);
-	ft_bzero(tab, total);
-	return (tab);
+	num = va_arg(s_args.args, int);
+	ft_putnbr(num);
+	s_args.rendue += length_of_num(num, "0123456789");
+	return (s_args);
 }

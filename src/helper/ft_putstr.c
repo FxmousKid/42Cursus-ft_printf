@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   c_conversion.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 22:19:52 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/04 00:57:57 by inazaria         ###   ########.fr       */
+/*   Created: 2024/03/31 20:08:58 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/01 22:43:32 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../include/ft_printf.h"
 
-t_args	c_conversion(t_args s_args)
+void	ft_putstr(char *str)
 {
-	char	c;
+	int	counter;
 
-	c = va_arg(s_args.args, int);
-	ft_putchar(c);
-	s_args.rendue++;
-	return (s_args);
+	counter = 0;
+	while (str && str[counter])
+		write(1, &str[counter++], 1);
 }

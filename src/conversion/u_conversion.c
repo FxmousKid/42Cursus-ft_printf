@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   u_conversion.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 19:19:57 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/01 22:31:58 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/02 22:02:37 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/04 02:13:02 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../include/ft_printf.h"
 
-size_t	ft_strlen(const char *s)
+t_args	u_conversion(t_args s_args)
 {
-	size_t	counter;
+	unsigned int	n;
+	int				len;
 
-	counter = 0;
-	while (s && s[counter])
-		counter++;
-	return (counter);
+	n = va_arg(s_args.args, unsigned int);
+	ft_putnbr(n);
+	len = length_of_num(n, "0123456789");
+	s_args.rendue += len;
+	return (s_args);
 }

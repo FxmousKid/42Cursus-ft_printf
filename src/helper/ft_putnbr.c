@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   d_and_i_conversions.c                              :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 21:50:27 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/04 12:22:32 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/03 16:05:27 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/03 23:01:18 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../include/ft_printf.h"
 
-t_args	d_and_i_conversions(t_args s_args)
+void	ft_putnbr(long n)
 {
-	int		num;
-
-	num = va_arg(s_args.args, int);
-	ft_putnbr(num);
-	s_args.rendue += length_of_num(num, "0123456789");
-	return (s_args);
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putchar(n % 10 + '0');
+	}
+	else
+		ft_putchar(n + '0');
 }

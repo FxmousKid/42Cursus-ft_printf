@@ -6,11 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 00:48:20 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/04 12:51:13 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/05 17:42:25 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "include/ft_printf.h"
 
 int	ft_printf_aux(char *str, t_conversionFuncPtr *conv_table, va_list args)
 {

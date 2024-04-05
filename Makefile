@@ -6,34 +6,17 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 20:49:10 by inazaria          #+#    #+#              #
-#    Updated: 2024/04/04 13:20:45 by inazaria         ###   ########.fr        #
+#    Updated: 2024/04/05 17:56:04 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-C_FILES_CONVERSIONS += x_and_X_conversions.c
-C_FILES_CONVERSIONS += c_conversion.c
-C_FILES_CONVERSIONS += d_and_i_conversions.c
-C_FILES_CONVERSIONS += p_conversion.c
-C_FILES_CONVERSIONS += s_conversion.c
-C_FILES_CONVERSIONS += percent_conversion.c
-C_FILES_CONVERSIONS += u_conversion.c
-C_FILES_CONVERSIONS += conversion_utils.c
+C_FILES_CONVERSIONS = $(wildcard src/conversion/*.c)
+C_FILES_HELPER 		= $(wildcard src/helper.c)
+C_FILES_PARSER 		= $(wildcard src/parser/*.c)
 
-C_FILES_HELPER += ft_atoi.c
-C_FILES_HELPER += ft_bzero.c
-C_FILES_HELPER += ft_calloc.c
-C_FILES_HELPER += ft_itoa.c
-C_FILES_HELPER += ft_memcpy.c
-C_FILES_HELPER += ft_putstr.c
-C_FILES_HELPER += ft_strdup.c
-C_FILES_HELPER += ft_strlen.c
-C_FILES_HELPER += ft_putnbr.c
-C_FILES_HELPER += ft_putchar.c
-C_FILES_HELPER += length_of_num.c
+SRC_FILES    = $(C_FILES_PARSER) $(C_FILES_CONVERSIONS) $(C_FILES_HELPER)
+SRC_FILES    += ft_printf.c
 
-C_FILES_PARSER += parsing_utils.c
-
-SRC_FILES    += $(C_FILES_PARSER) $(C_FILES_CONVERSIONS) $(C_FILES_HELPER) ft_printf.c
 OBJ_FILES    = $(SRC_FILES:.c=.o)
 
 C_FLAGS      = -Wall -Wextra -Werror -g3
