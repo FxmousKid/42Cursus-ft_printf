@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 19:19:57 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/01 22:31:58 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/02 22:30:08 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/05 20:00:34 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "../include/ft_printf.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putchar(char c)
 {
-	size_t	counter;
-
-	counter = 0;
-	while (s && s[counter])
-		counter++;
-	return (counter);
+	write(1, &c, 1);
 }

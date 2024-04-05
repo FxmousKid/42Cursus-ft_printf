@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   c_conversion.c                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 22:19:52 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/05 17:45:07 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/01 19:19:57 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/01 22:31:58 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "../include/ft_printf.h"
 
-t_args	c_conversion(t_args s_args)
+size_t	ft_strlen(const char *s)
 {
-	char	c;
+	size_t	counter;
 
-	c = va_arg(s_args.args, int);
-	ft_putchar(c);
-	s_args.rendue++;
-	return (s_args);
+	counter = 0;
+	while (s && s[counter])
+		counter++;
+	return (counter);
 }

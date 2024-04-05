@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 00:48:20 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/05 17:42:25 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/05 20:00:50 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,12 @@ int	ft_printf(const char *str, ...)
 	rendue = ft_printf_aux((char *) str, conv_table, args);
 	va_end(args);
 	return (rendue);
+}
+
+int main(void)
+{
+	char *s = malloc(12);
+	int y = printf("'%p'\n", s);
+	(void)y;
+	return (0);
 }

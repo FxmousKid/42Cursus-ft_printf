@@ -6,11 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 17:36:56 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/04 12:35:10 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/05 19:59:55 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "../include/ft_printf.h"
 
 int	parse_arg_count(char *str)
 {

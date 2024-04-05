@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/02 22:30:08 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/03 23:01:29 by inazaria         ###   ########.fr       */
+/*   Created: 2024/03/31 20:08:58 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/01 22:43:32 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "../include/ft_printf.h"
 
-void	ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write(1, &c, 1);
+	int	counter;
+
+	counter = 0;
+	while (str && str[counter])
+		write(1, &str[counter++], 1);
 }
