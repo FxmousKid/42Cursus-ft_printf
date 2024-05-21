@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 20:49:10 by inazaria          #+#    #+#              #
-#    Updated: 2024/04/05 20:06:07 by inazaria         ###   ########.fr        #
+#    Updated: 2024/04/26 14:46:40 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,8 @@ INCLUDE 	 = ./include/
 
 C_FLAGS      = -Wall -Wextra -Werror -g3
 NAME         = libftprintf.a
-CC 			 = cc
+CC 			 = clang
 RM			 = rm -rf
-
-test : $(OBJ_FILES)
-	$(CC) $(C_FLAGS) -I $(INCLUDE) -o test $(OBJ_FILES)
 
 .c.o:
 	$(CC) $(C_FLAGS) -I $(INCLUDE) -c $< -o $(<:.c=.o)
