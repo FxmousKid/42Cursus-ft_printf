@@ -6,11 +6,12 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 00:48:20 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/22 15:54:58 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/05/21 19:44:51 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/ft_printf.h"
+#include <stdarg.h>
 
 int	ft_printf_aux(char *str, t_conversionFuncPtr *conv_table, va_list args)
 {
@@ -18,7 +19,9 @@ int	ft_printf_aux(char *str, t_conversionFuncPtr *conv_table, va_list args)
 	t_args	s_args;
 
 	counter = 0;
-	s_args = (t_args){.args = args, .rendue = 0};
+	s_args = (t_args){};
+	s_args.rendue = 0;
+	va_copy(s_args.args, args);
 	while (str && str[counter])
 	{
 		if (str[counter] != '%')
