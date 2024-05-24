@@ -45,6 +45,8 @@ int	ft_printf(const char *str, ...)
 	va_list				args;
 	t_conversionFuncPtr	*conv_table;
 
+	if (str == NULL)
+		return (-1);
 	va_start(args, str);
 	conv_table = make_conversion_table();
 	rendue = ft_printf_aux((char *) str, conv_table, args);
